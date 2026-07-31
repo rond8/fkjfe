@@ -44,17 +44,25 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     }
 
+    /* Updated Icon Container for Custom Image */
     .app-icon {
-      width: 72px;
-      height: 72px;
-      background: linear-gradient(135deg, var(--primary), #6366f1);
-      border-radius: 18px;
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
       margin: 0 auto 20px auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
-      box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+      overflow: hidden;
+      background-color: #0f172a;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     h1 {
@@ -144,7 +152,10 @@
 <body>
 
   <div class="container">
-    <div class="app-icon">📱</div>
+    <!-- Custom App Icon from Dropbox Link -->
+    <div class="app-icon">
+      <img src="https://www.dropbox.com/scl/fi/fxb525ic6zxjwksf1cdjt/icon_1024_transparent.png?rlkey=qlmejh201wnw8h2z8th60knl7&st=81ga73w4&dl=1" alt="App Icon" />
+    </div>
 
     <h1>App Download</h1>
     <p class="subtitle">Download and install the debug APK build directly to your Android device.</p>
@@ -155,7 +166,7 @@
       <span><strong>Platform:</strong> Android</span>
     </div>
 
-    <!-- Direct Download Button using your converted Dropbox Link -->
+    <!-- Direct Download APK Link -->
     <a href="https://www.dropbox.com/scl/fi/c7jpdyg97r88nscpctp2e/app-debug.apk?rlkey=xokg7ma73n8n3l94wpzr72s1c&st=vk5j2wx1&dl=1" id="downloadBtn" class="download-btn">
       Download APK
     </a>
