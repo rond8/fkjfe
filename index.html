@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download App</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --accent: #22c55e;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--primary), #6366f1);
+      border-radius: 18px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .info-badge {
+      display: inline-flex;
+      gap: 12px;
+      background-color: var(--bg-color);
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      background-color: var(--primary);
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px 0 rgba(56, 189, 248, 0.39);
+    }
+
+    .download-btn:hover {
+      background-color: var(--primary-hover);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .status-msg {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      min-height: 20px;
+    }
+
+    .steps-section {
+      margin-top: 28px;
+      text-align: left;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .steps-section h3 {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .steps-list {
+      list-style-type: none;
+    }
+
+    .steps-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .steps-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="app-icon">📱</div>
+
+    <h1>App Download</h1>
+    <p class="subtitle">Download and install the debug APK build directly to your Android device.</p>
+
+    <div class="info-badge">
+      <span><strong>File:</strong> app-debug.apk</span>
+      <span>•</span>
+      <span><strong>Platform:</strong> Android</span>
+    </div>
+
+    <!-- Direct Download Button using your converted Dropbox Link -->
+    <a href="https://www.dropbox.com/scl/fi/c7jpdyg97r88nscpctp2e/app-debug.apk?rlkey=xokg7ma73n8n3l94wpzr72s1c&st=vk5j2wx1&dl=1" id="downloadBtn" class="download-btn">
+      Download APK
+    </a>
+
+    <div id="statusMsg" class="status-msg"></div>
+
+    <div class="steps-section">
+      <h3>Installation Instructions</h3>
+      <ul class="steps-list">
+        <li>Tap <strong>Download APK</strong> to start downloading.</li>
+        <li>Open the downloaded <code>.apk</code> file from your downloads folder.</li>
+        <li>If prompted, allow installation from unknown sources in your device settings.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const downloadBtn = document.getElementById("downloadBtn");
+    const statusMsg = document.getElementById("statusMsg");
+
+    downloadBtn.addEventListener("click", () => {
+      statusMsg.textContent = "Download started! Check your browser downloads.";
+      setTimeout(() => {
+        statusMsg.textContent = "";
+      }, 6000);
+    });
+  </script>
+</body>
+</html>
